@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eldad Portfolio Website</title>
-    <link rel="stylesheet" href="dist/output.css">
+    <link rel="stylesheet" href="dist/css/final.css">
     <link rel="shortcut icon" type="image/x-icon" href="dist/img/Logo.png" />
+
+    <!-- darkmode localstorage -->
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+        document.documentElement.classList.remove('dark')
+        }
+    </script>
 </head>
 <body>
     <!-- header start -->
@@ -14,7 +23,7 @@
         <div class="container">
             <div class="flex items-center justify-between relative">
                 <div class="px-4">
-                    <a href="#home" class="font-bold text-lg text-primary block py-6">Eldad Rizaldi</a>
+                    <a href="#home" class="font-bold text-lg text-primary block py-6 dark:text-secondary">Eldad Rizaldi</a>
                 </div>
                 <div class="flex items-center px-4">
                     <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
@@ -23,16 +32,28 @@
                         <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
                     </button>
 
-                    <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[w50px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                    <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-slate-700 lg:dark:bg-transparent">
                         <ul class="block lg:flex">
                             <li class="group">
-                                <a href="#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Home</a>
+                                <a href="#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Home</a>
                             </li>
                             <li class="group">
-                                <a href="#about" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Tentang Saya</a>
+                                <a href="#about" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Tentang Saya</a>
                             </li>
                             <li class="group">
-                                <a href="#portfolio" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Portfolio Saya</a>
+                                <a href="#portfolio" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Portfolio Saya</a>
+                            </li>
+                            <li class="flex items-center pl-8 mt-3">
+                                <div class="flex">
+                                    <span class="mr-2 text-sm text-slate-500">ligth</span>
+                                    <input type="checkbox" class="hidden" id="dark-toggle">
+                                    <label for="dark-toggle">
+                                        <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-primary p-1">
+                                            <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"></div>
+                                        </div>
+                                    </label>
+                                    <span class="ml-2 text-sm text-slate-500">dark</span>
+                                </div>
                             </li>
                         </ul>
                     </nav>
@@ -43,19 +64,19 @@
     <!-- header end -->
 
     <!-- hero section start -->
-    <section id="home" class="pt-36">
+    <section id="home" class="pt-36 dark:bg-dark">
         <div class="container">
             <div class=" flex flex-wrap">
                 <div class="w-full self-center px-4 lg:w-1/2">
-                    <h1 class="text-base font-semibold text-primary md:text-xl">Hello World! Saya <span class="block font-bold text-dark text-4xl">Eldad Rizaldi A</span></h1>
-                    <h2 class="font-medium text-dark text-lg mb-4 lg:text-5xl">Mahasiswa Informatika</h2>
-                    <p class="font-medium text-tersier mb-10 leading-relaxed">Ngoding. Setres. Ngopi. Ngegame. Ngoding lagi. Sukses !! </p>
+                    <h1 class="text-base font-semibold text-primary md:text-xl dark:text-white">Hello World! Saya <span class="block font-bold text-dark text-4xl dark:text-secondary">Eldad Rizaldi A</span></h1>
+                    <h2 class="font-medium text-dark text-lg mb-4 lg:text-5xl dark:text-white">Mahasiswa Informatika</h2>
+                    <p class="font-medium text-tersier mb-10 leading-relaxed dark:text-white">Ngoding. Setres. Ngopi. Ngegame. Ngoding lagi. Sukses !! </p>
                     <a href="https://wa.me/082136402975" class="text-base font-semibold text-white bg-primary py-5 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-500 ease-in-out">Hubungi saya</a>
                 </div>
                 <div class="w-full self-end px-4 lg:w-1/2">
                     <div class="relative mt-10 lg:mt-9 lg:right-0">
-                        <img src="dist/img/eldad.png" alt="Eldad Profile Pict" class="max-w-full mx-auto">
-                        <span class="absolute top-10 -z-10 left-4 -translate-x-4 md:scale-125">
+                        <img src="dist/img/eldad.png" alt="Eldad Profile Pict" class="max-w-full mx-auto relative z-10">
+                        <span class="absolute top-10 left-4 -translate-x-4 md:scale-125">
                             <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                 <path fill="#05386B" d="M34.5,-58.1C41.5,-49.2,41.7,-34.2,48.3,-21.6C54.8,-8.9,67.6,1.3,70.8,13.3C74,25.3,67.5,39.1,57,47.2C46.6,55.4,32.2,57.9,17.5,64.5C2.8,71,-12.1,81.5,-20.8,76.4C-29.5,71.3,-32,50.6,-43.1,37.5C-54.3,24.4,-74.1,19,-76.8,10.1C-79.5,1.3,-65.1,-10.9,-52.8,-18.4C-40.5,-26,-30.4,-28.8,-22,-37C-13.5,-45.2,-6.8,-58.8,3.5,-64.3C13.8,-69.7,27.5,-67,34.5,-58.1Z" transform="translate(100 100) scale(1.3)" />
                               </svg>
@@ -68,14 +89,14 @@
     <!-- hero section end -->
 
     <!-- about section start -->
-    <section id="about" class="pt-36 pb-32">
+    <section id="about" class="pt-36 pb-32 dark:bg-dark">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full px-4 mb-10 lg:w-1/2">
-                    <h4 class="font-bold uppercase text-primary text-lg mb-3">Profil Saya</h4>
-                    <h2 class="font-bold text-dark text-3xl mb-3 max-w-md lg:text-4xl">Eldad Rizaldi Adipratama</h2>
+                    <h4 class="font-bold uppercase text-primary text-lg mb-3 dark:text-white">Profil Saya</h4>
+                    <h2 class="font-bold text-dark text-3xl mb-3 max-w-md lg:text-4xl dark:text-secondary">Eldad Rizaldi Adipratama</h2>
                     <p class="font-medium text-base text-tersier mb-3 lg:text-lg">1 Januari 2000</p>
-                    <p class="font-medium text-base text-dark max-w-xl lg:text-lg mb-10">Saya adalah seorang mahasiswa Informatika yang berkuliah 
+                    <p class="font-medium text-base text-dark max-w-xl lg:text-lg mb-10 dark:text-white">Saya adalah seorang mahasiswa Informatika yang berkuliah 
                         di Universitas Kristen Duta Wacana Yogyakarta. 
                         Saya memiliki kemampuan dan ketertarikan dalam pembuatan website dan aplikasi android.
                     </p>
@@ -107,13 +128,13 @@
     <!-- about section end -->
 
     <!-- portfolio section start -->
-    <section id="portfolio" class="pt-36 pb-16 bg-primary">
+    <section id="portfolio" class="pt-36 pb-16 bg-primary dark:bg-slate-800">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
-                    <h4 class="font-semibold text-lg text-white mb-2">Portfolio</h4>
-                    <h2 class="font-bold text-secondary text-3xl mb-4 sm:text-4xl lg:text-5xl">Project Terbaru Saya</h2>
-                    <p class="font-medium text-md text-white md:text-lg">Beberapa project aplikasi website ataupun android sederhana yang saya buat. Setiap project tidak dipublish hanya untuk belajar ataupun tugas perkuliahan</p>
+                    <h4 class="font-semibold text-lg text-white mb-2 dark:text-white">Portfolio</h4>
+                    <h2 class="font-bold text-secondary text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-secondary">Project Terbaru Saya</h2>
+                    <p class="font-medium text-md text-white md:text-lg dark:text-white">Beberapa project aplikasi website ataupun android sederhana yang saya buat. Setiap project tidak dipublish hanya untuk belajar ataupun tugas perkuliahan</p>
                 </div>
             </div>
             <div class="w-full px-4 flex flex-wrap justify-center">
@@ -137,33 +158,33 @@
     <!-- portfolio section end -->
 
     <!-- footer start -->
-    <footer class="bg-white pt-24 pb-12">
+    <footer class="bg-white pt-24 pb-12 dark:bg-dark">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full px-4 mb-12 text-dark font-medium md:w-1/2">
-                    <h2 class="font-bold text-4xl text-white mb-5">Eldad Rizaldi</h2>
-                    <h3 class="font-bold text-2xl mb-2">Hubungi Saya</h3>
-                    <p class="text-base text-tersier">eldad.rizaldi@ti.udwk.ac.id</p>
-                    <p class="text-base text-tersier">Jl. Jatimulyo Gg Pinang Merah 38A</p>
-                    <p class="text-base text-tersier">Yogyakarta</p>
+                    <h2 class="font-bold text-4xl text-dark mb-5 dark:text-secondary">Eldad Rizaldi</h2>
+                    <h3 class="font-bold text-2xl mb-2 dark:text-white">Hubungi Saya</h3>
+                    <p class="text-base text-tersier dark:text-white">eldad.rizaldi@ti.udwk.ac.id</p>
+                    <p class="text-base text-tersier dark:text-white">Jl. Jatimulyo Gg Pinang Merah 38A</p>
+                    <p class="text-base text-tersier dark:text-white">Yogyakarta</p>
                 </div>
                 <div class="w-full px-4 mb-12 md:w-1/2 lg:pt-8">
-                    <h3 class="font-semibold text-xl text-dark mb-5">Link</h3>
+                    <h3 class="font-semibold text-xl text-dark mb-5 dark:text-secondary">Link</h3>
                     <ul class="text-tersier">
                         <li>
-                            <a href="#home" class="inline-block text-base hover:text-primary mb-3">Home</a>
+                            <a href="#home" class="inline-block text-base hover:text-primary mb-3 dark:text-white">Home</a>
                         </li>
                         <li>
-                            <a href="#about" class="inline-block text-base hover:text-primary mb-3">Tentang Saya</a>
+                            <a href="#about" class="inline-block text-base hover:text-primary mb-3 dark:text-white">Tentang Saya</a>
                         </li>
                         <li>
-                            <a href="#portfolio" class="inline-block text-base hover:text-primary mb-3">Portfolio Saya</a>
+                            <a href="#portfolio" class="inline-block text-base hover:text-primary mb-3 dark:text-white">Portfolio Saya</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <!-- footer copyright -->
-            <div class="w-full pt-10 border-t border-dark">
+            <div class="w-full pt-10 border-t border-dark dark:border-white">
                 <div class="flex items-center justify-center mb-5">
                     <!-- instagram svg -->
                     <a href="https://www.instagram.com/eldadra19/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
@@ -180,11 +201,17 @@
                         <svg class="fill-current" width="20" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
                     </a>
                 </div>
-                <p class="font-medium text-sm text-tersier text-center">Dibuat oleh <a href="https://instagram.com/eldadra19" target="_blank" class="font-bold text-primary">Eldad Rizaldi A</a>, menggunakan <a href="https://tailwindcss.com/" target="_blank" class="font-bold text-sky-500">Tailwind CSS 3</a>.</p>
+                <p class="font-medium text-sm text-tersier text-center dark:text-white">Dibuat oleh <a href="https://instagram.com/eldadra19" target="_blank" class="font-bold text-primary dark:text-secondary">Eldad Rizaldi A</a>, menggunakan <a href="https://tailwindcss.com/" target="_blank" class="font-bold text-sky-500">Tailwind CSS 3</a>.</p>
             </div>
         </div>
     </footer>
     <!-- footer end -->
+
+    <!-- back to top start -->
+    <a href="#home" id="to-top" class="fixed hidden z-[9999] bottom-4 right-4 h-14 w-14 bg-primary rounded-full p-4 justify-center items-center hover:animate-pulse">
+        <span class="block w-5 h-5 border-t-2 border-l-2 rotate-45 mt-2"></span>
+    </a>
+    <!-- back to top end -->
     <script src="dist/js/script.js"></script>
 </body>
 </html>
