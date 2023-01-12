@@ -7,6 +7,13 @@
     <title>Eldad Portfolio Website</title>
     <link rel="stylesheet" href="dist/css/final.css">
     <link rel="shortcut icon" type="image/x-icon" href="dist/img/Logo.png" />
+    <!-- animate.style -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+  <!-- aos -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- darkmode localstorage -->
     <script>
@@ -68,12 +75,12 @@
         <div class="container">
             <div class=" flex flex-wrap">
                 <div class="w-full self-center px-4 lg:w-1/2">
-                    <h1 class="text-base font-semibold text-primary md:text-xl dark:text-white">Hello World! Saya <span class="block font-bold text-dark text-4xl dark:text-secondary lg:text-5xl">Eldad Rizaldi A</span></h1>
+                    <h1 class="text-base font-semibold text-primary md:text-xl dark:text-white">Hello World! Saya <span class="block font-bold text-dark text-4xl dark:text-secondary lg:text-5xl animate__animated animate__lightSpeedInLeft animate__delay-.05s">Eldad Rizaldi A</span></h1>
                     <h2 class="font-medium text-dark text-lg mb-4 lg:text-4xl dark:text-white">Mahasiswa Informatika</h2>
                     <p class="font-medium text-tersier mb-10 leading-relaxed dark:text-white">Ngoding. Setres. Ngopi. Ngegame. Ngoding lagi. Sukses !! </p>
                     <a href="https://wa.me/082136402975" class="text-base font-semibold text-white bg-primary py-5 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-500 ease-in-out">Hubungi saya</a>
                 </div>
-                <div class="w-full self-end px-4 lg:w-1/2">
+                <div class="w-full self-end px-4 lg:w-1/2 animate__animated animate__slideInUp animate__delay-1.5s animate_slow">
                     <div class="relative mt-10 lg:mt-9 lg:right-0">
                         <img src="dist/img/eldad.png" alt="Eldad Profile Pict" class="max-w-full mx-auto relative z-10">
                         <span class="absolute top-10 left-4 -translate-x-4 md:scale-125">
@@ -92,7 +99,7 @@
     <section id="about" class="pt-36 pb-32 dark:bg-dark">
         <div class="container">
             <div class="flex flex-wrap">
-                <div class="w-full px-4 mb-10 lg:w-1/2">
+                <div class="w-full px-4 mb-10 lg:w-1/2" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="50">
                     <h4 class="font-bold uppercase text-primary text-lg mb-3 dark:text-white">Profil Saya</h4>
                     <h2 class="font-bold text-dark text-3xl mb-3 max-w-md lg:text-4xl dark:text-secondary">Eldad Rizaldi Adipratama</h2>
                     <p class="font-medium text-base text-tersier mb-3 lg:text-lg">1 Januari 2000</p>
@@ -104,7 +111,7 @@
                         Download CV
                     </a>
                 </div>
-                <div class="w-full px-4 flex lg:w-1/2 lg:justify-center">
+                <div class="w-full px-4 flex lg:w-1/2 lg:justify-center" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="50">
                     <div class="flex items-center">
                         <!-- instagram svg -->
                         <a href="https://www.instagram.com/eldadra19/" target="_blank" class="w-20 h-20 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
@@ -130,14 +137,14 @@
     <!-- portfolio section start -->
     <section id="portfolio" class="pt-36 pb-16 bg-primary dark:bg-slate-800">
         <div class="container">
-            <div class="w-full px-4">
+            <div class="w-full px-4" data-aos="zoom-out" data-aos-duration="1000" data-aos-delay="50">
                 <div class="max-w-xl mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-white mb-2 dark:text-white">Portfolio</h4>
                     <h2 class="font-bold text-secondary text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-secondary">Project Terbaru Saya</h2>
                     <p class="font-medium text-md text-white md:text-lg dark:text-white">Beberapa project aplikasi website ataupun android sederhana yang saya buat. Setiap project tidak dipublish hanya untuk belajar ataupun tugas perkuliahan</p>
                 </div>
             </div>
-            <div class="w-full px-4 flex flex-wrap justify-center">
+            <div class="w-full px-4 flex flex-wrap justify-center" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
                 <div class="mb-12 p-4 md:w-1/2">
                     <div class="rounded-md shadow-md overflow-hidden">
                         <img src="dist/img/my-project/project-1.jpg" alt="Project 1 - Aplikasi Pemesanan Tiket Pesawat Android" width="w-full">
@@ -213,5 +220,10 @@
     </a>
     <!-- back to top end -->
     <script src="dist/js/script.js"></script>
+    <!-- aos script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
 </body>
 </html>
